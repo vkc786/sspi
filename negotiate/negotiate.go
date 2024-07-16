@@ -194,6 +194,13 @@ func (c *ClientContext) Sizes() (uint32, uint32, uint32, uint32, error) {
 	return c.sctxt.Sizes()
 }
 
+// SessionKey queries the client context for the session key used in the
+// communication between the server and client. It returns the pointer to
+// session key and session key length and any error
+func (c *ClientContext) SessionKey() (*uint16, uint32, error) {
+	return c.sctxt.SessionKey()
+}
+
 // MakeSignature uses the established client context to create a signature
 // for the given message using the provided quality of protection flags and
 // sequence number. It returns the signature token in addition to any error.
@@ -334,6 +341,13 @@ func (c *ServerContext) RevertToSelf() error {
 // messages, the size of any security trailer, and any error.
 func (c *ServerContext) Sizes() (uint32, uint32, uint32, uint32, error) {
 	return c.sctxt.Sizes()
+}
+
+// SessionKey queries the server context for the session key used in the
+// communication between the server and client. It returns the pointer to
+// session key and session key length and any error
+func (c *ServerContext) SessionKey() (*uint16, uint32, error) {
+	return c.sctxt.SessionKey()
 }
 
 // MakeSignature uses the established server context to create a signature

@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
+//go:build windows
 // +build windows
 
 package sspi
@@ -184,6 +185,18 @@ func (c *Context) Sizes() (uint32, uint32, uint32, uint32, error) {
 		return 0, 0, 0, 0, ret
 	}
 	return s.MaxToken, s.MaxSignature, s.BlockSize, s.SecurityTrailer, nil
+}
+
+// SessionKey queries the given context for the session key used in the
+// communication between the server and client. It returns the pointer to
+// session key and the session key length and any error
+func (c *Context) SessionKey() (*uint16, uint32, error) {
+	var s _SecPkgContext_SessionKey
+	ret := QueryContextAttributes(c.Handle, _SECPKG_ATTR_SESSION_KEY, (*byte)(unsafe.Pointer(&s)))
+	if ret != SEC_E_OK {
+		return nil, 0, ret
+	}
+	return s.SessionKey, s.SessionKeyLength, nil
 }
 
 // VerifyFlags determines if all flags used to construct the context

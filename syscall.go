@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
+//go:build windows
 // +build windows
 
 package sspi
@@ -57,6 +58,11 @@ type _SecPkgContext_Sizes struct {
 	MaxSignature    uint32
 	BlockSize       uint32
 	SecurityTrailer uint32
+}
+
+type _SecPkgContext_SessionKey struct {
+	SessionKeyLength uint32
+	SessionKey       *uint16
 }
 
 //sys	QuerySecurityPackageInfo(pkgname *uint16, pkginfo **SecPkgInfo) (ret syscall.Errno) = secur32.QuerySecurityPackageInfoW
