@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
+//go:build windows
 // +build windows
 
 package kerberos_test
@@ -18,8 +19,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/alexbrainman/sspi"
-	"github.com/alexbrainman/sspi/kerberos"
+	"github.com/vkc786/sspi"
+	"github.com/vkc786/sspi/kerberos"
 )
 
 var (

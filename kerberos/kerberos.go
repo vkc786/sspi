@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
+//go:build windows
 // +build windows
 
 // Package kerberos provides access to the Microsoft Kerberos SSP Package.
-//
 package kerberos
 
 import (
@@ -14,8 +14,8 @@ import (
 	"time"
 	"unsafe"
 
-	"github.com/alexbrainman/sspi"
-	"github.com/alexbrainman/sspi/internal/common"
+	"github.com/vkc786/sspi"
+	"github.com/vkc786/sspi/internal/common"
 )
 
 // TODO: maybe (if possible) move all winapi related out of sspi and into sspi/internal/winapi

@@ -15,8 +15,8 @@ import (
 	"time"
 	"unsafe"
 
-	"github.com/alexbrainman/sspi"
-	"github.com/alexbrainman/sspi/internal/common"
+	"github.com/vkc786/sspi"
+	"github.com/vkc786/sspi/internal/common"
 )
 
 // TODO: maybe (if possible) move all winapi related out of sspi and into sspi/internal/winapi

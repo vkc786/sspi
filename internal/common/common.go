@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
+//go:build windows
 // +build windows
 
 package common
@@ -10,7 +11,7 @@ import (
 	"errors"
 	"syscall"
 
-	"github.com/alexbrainman/sspi"
+	"github.com/vkc786/sspi"
 )
 
 func BuildAuthIdentity(domain, username, password string) (*sspi.SEC_WINNT_AUTH_IDENTITY, error) {
