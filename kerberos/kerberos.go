@@ -3,7 +3,6 @@
 // license that can be found in the LICENSE file.
 
 //go:build windows
-// +build windows
 
 // Package kerberos provides access to the Microsoft Kerberos SSP Package.
 package kerberos

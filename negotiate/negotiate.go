@@ -3,7 +3,6 @@
 // license that can be found in the LICENSE file.
 
 //go:build windows
-// +build windows
 
 // Package negotiate provides access to the Microsoft Negotiate SSP Package.
 package negotiate

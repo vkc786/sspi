@@ -3,7 +3,6 @@
 // license that can be found in the LICENSE file.
 
 //go:build windows
-// +build windows
 
 // Package ntlm provides access to the Microsoft NTLM SSP Package.
 package ntlm
